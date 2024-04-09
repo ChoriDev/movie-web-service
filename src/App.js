@@ -1,19 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Button from "./Button.js";
-import styles from "./App.module.css";
+import { Routes, Route } from "react-router-dom";
+import Detail from "./routes/Detail";
+import Home from "./routes/Home";
 
 function App() {
   return (
-    <div>
-      <h1 className={styles.title}>Welcome Back!</h1>
-      <Button text={"Click Me!!"} />
-    </div>
+    <Routes>
+      <Route path={"/"} element={<Home />} />
+      <Route path={"/movie/:id"} element={<Detail />} />
+    </Routes>
   );
 }
-
-Button.propTypes = {
-  text: PropTypes.string.isRequired,
-};
 
 export default App;
